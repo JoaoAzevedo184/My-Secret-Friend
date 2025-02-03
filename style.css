@@ -88,9 +88,12 @@ body {
 }
 
 .button-container {
-    width: 300px;
+    display: flex;
     justify-content: center;
+    width: 100%;
+    margin-top: 20px;
 }
+
 
 /* Estilos de entrada de texto */
 .input-title {
@@ -118,16 +121,16 @@ button {
 .button-add {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 10px 40px;
     background-color: var(--color-tertiary);
     color: var(--color-text);
-    border-radius: 25px 25px 25px 25px;
-    position: absolute;
-    top: 77%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
+    border-radius: 25px;
+    margin-top: 20px; /* Adiciona espaço abaixo do input */
+    position: static; /* Remove o posicionamento absoluto */
+    transform: none; /* Remove o deslocamento */
 }
+
 
 .button-add:hover {
     background-color: #a1a1a1;
@@ -154,16 +157,24 @@ ul {
 .button-draw {
     display: flex;
     align-items: center;
-    width: 100%;
-    padding: 10px 40px;
+    justify-content: center;
+    width: auto; /* Garante que ele tenha o tamanho do conteúdo */
+    max-width: 300px; /* Define um limite de largura */
+    padding: 10px 20px;
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
+    border-radius: 25px;
+    margin-top: 20px;
 }
 
+
 .button-draw img {
-    margin-right: 40px;
+    margin-right: 10px; /* Reduzi a margem */
+    width: 24px; /* Tamanho fixo do ícone */
+    height: 24px;
 }
+
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
