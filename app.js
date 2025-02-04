@@ -14,6 +14,14 @@ function adicionarCombo(){
         return;
     }
 
+    if (verificarNomeRepetido(amigo)) {
+        alert('Este nome já foi adicionado! Escolha outro.');
+        return;
+    } else if(verificarNomeRepetido(amigoSecreto)){
+        alert('Esta pessoa já foi escolhida! Escolha outro.');
+        return;
+    }
+
     adicionarAmigo(amigo);
     adicionarPresente(presente);
     adicionarAmigoSecreto(amigoSecreto);
@@ -21,6 +29,15 @@ function adicionarCombo(){
     document.getElementById('amigo').value = '';
     document.getElementById('presente').value = '';
     document.getElementById('amigo-secreto').value = '';
+}
+
+function verificarNomeRepetido(nome) {
+    if(listaDeAmigos.includes(nome)){
+        return true;
+    }else if(listaDeAmigosSecretos.includes(nome)){
+        return true;
+    }
+    return false;
 }
 
 function adicionarAmigo(amigo){
